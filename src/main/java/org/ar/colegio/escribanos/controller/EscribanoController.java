@@ -12,6 +12,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.validation.Valid;
+
 /**
  * REST controller relacionado a manejar operaciones relacionadas a escribanos
  */
@@ -37,7 +39,7 @@ public class EscribanoController {
      * @return String con el nombre de la pagina a mostrarse con el resultado.
      */
     @RequestMapping
-    public String getEscribanos(Model model, RequestDTO request) throws Exception {
+    public String ógetEscribanos(Model model, @Valid RequestDTO request) throws Exception {
         log.debug("Recuperamos todos los escribanos");
 
         EscribanoResponse escribanoResponse = escribanoService.getEscribano(request.getCuit());
